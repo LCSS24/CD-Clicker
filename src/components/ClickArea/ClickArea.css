@@ -30,6 +30,7 @@
     position: relative;
     /* <<< ajoute ÇA sinon ça marche pas */
     width: max-content;
+    overflow: hidden;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -37,11 +38,16 @@
     cursor: pointer;
     z-index: 1;
     user-select: none;
-    transition: transform 0.2s ease;
+    transition: all 0.2s ease;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
 }
 
-.cd-click:hover {
-    transform: scale(1.1);
+.plus {
+    transform: rotate(500deg) !important;
 }
 
 .note.spawned {
@@ -51,7 +57,7 @@
     /* bien centrer sur le clic */
     animation: floatUp 1s forwards;
     pointer-events: none;
-    z-index: 2;
+    z-index: 5;
 }
 
 /* Animation de montée + fade out */
